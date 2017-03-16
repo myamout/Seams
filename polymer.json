@@ -1,0 +1,10 @@
+{
+  "extraDependencies": [
+    "images/**/*"
+  ],
+  "lint": {
+    "rules": [
+      "polymer-2"
+    ]
+  }
+}

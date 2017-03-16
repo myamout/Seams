@@ -1,0 +1,7 @@
+{
+  "name": "seams",
+  "short_name": "seams",
+  "description": "website for dj seams",
+  "start_url": "/",
+  "display": "standalone"
+}

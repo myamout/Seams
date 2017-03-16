@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles/shared-styles.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="home-element">
+  <template>
+    <style include="shared-styles"></style>
+
+
+    <div class="row">
+      <div class="center">
+        <paper-card elevation=4>
+          <div class="card-content">
+            <h1 class="center"> SEAMS </h1>
+            <p>
+              Fire bio inbound here once Seth stops being
+              lazy and writes me one... none of the changes are being reflected on the server....?
+            </p>
+          </div>
+        </paper-card>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    
+  class HomeElement extends Polymer.Element {
+    static get is() {return 'home-element';}
+  }
+  window.customElements.define(HomeElement.is, HomeElement);
+  </script>
+</dom-module>

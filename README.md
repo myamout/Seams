@@ -3,8 +3,6 @@
 
 ## Current Task List For Site
 
-+ Adjust the Nav Bar to use the slide out thingy, try and add some routes maybe idk
-+ Add paper card header
-+ add generator for iFrame soundcloud songs
-+ add contact us
-+ add social media links
++ Try and get some routing to work...
++ Looks like the images is broken, might have to use polymer to build and bundle and then use Express to serve in prod
++ Little bit more styling and evening out the rough edges
