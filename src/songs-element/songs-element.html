@@ -10,20 +10,35 @@
       }
       .row-element {
         padding: 5%;
-      }
+      }a
     </style>
 
     <div>
       <template is="dom-repeat" items="{{mixes}}">
         <div class="row">
           <div class="row-element">
-            <paper-card elevation=4>
-            <h2> [[item.mixTitle]] </h2>
-            <iframe width="100%" height="300" scrolling="yes" frameborder="no" src="[[item.scLink]]"></iframe>
-            <p>
-              [[item.blurb]]
-            </p>
-          </paper-card>
+            <template is="dom-if" if="{{item.sc}}">
+              <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> [[item.mixTitle]] </h2>
+                  <iframe width="100%" height="300" scrolling="yes" frameborder="no" src="[[item.scLink]]"></iframe>
+                  <p>
+                    [[item.blurb]]
+                  </p>
+                </div>
+              </paper-card>
+            </template>
+            <template is="dom-if" if="{{!item.sc}}">
+              <paper-card elevation=4>
+                <div class="card-content">
+                  <h2> [[item.mixTitle]] </h2>
+                <iframe width="100%" height="120" src="[[item.scLink]]" frameborder="0"></iframe>
+                <p>
+                  [[item.blurb]]
+                </p>
+                </div>
+              </paper-card>
+            </template>
           </div>
         </div>
       </template>
