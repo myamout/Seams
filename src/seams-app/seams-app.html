@@ -9,6 +9,7 @@
 
 <link rel="import" href="../home-element/home-element.html">
 <link rel="import" href="../songs-element/songs-element.html">
+<link rel="import" href="../contact-element/contact-element.html">
 
 <dom-module id="seams-app">
   <template>
@@ -67,6 +68,9 @@
       .container p {
         line-height: 1.5;
       }
+      .container-element {
+        padding: 2.5%;
+      }
       header {
         @apply(--layout-vertical);
         @apply(--layout-center-center);
@@ -106,7 +110,13 @@
 
       <section id="songs">
         <div class="container">
-          <songs-element test="{{tester}}"></songs-element>
+          <songs-element mixes="{{mixesInfo}}"></songs-element>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <contact-element></contact-element>
         </div>
       </section>
 
@@ -121,13 +131,40 @@
       
       static get properties() {
         return {
-          tester: {
+          mixesInfo: {
             type: Array,
             value () {
               return [
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300172729&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=true&amp;visual=true",
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309895959&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303106381&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+                {
+                  mixTitle: 'A Wintry Mix',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300172729&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=true&amp;visual=true",
+                  blurb: 'Mix for December 2016',
+                  sc: true
+                },
+                {
+                  mixTitle: 'February Vibes',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309895959&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+                  blurb: 'Mix for February 2017',
+                  sc: true
+                },
+                {
+                  mixTitle: 'January Mix',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303106381&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+                  blurb: 'Mix for January 2017',
+                  sc: true
+                },
+                {
+                  mixTitle: 'Big Bar Banger',
+                  scLink: "https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fseth-abrams%2Fa%2F&hide_cover=1",
+                  blurb: 'Mix played for the final of the OUAB DJ competition',
+                  sc: false
+                },
+                {
+                  mixTitle: 'OUAB DJ Competition Submission',
+                  scLink: "https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fseth-abrams%2Fouab-spring-concert-dj-competition-submission%2F&hide_cover=1",
+                  blurb: 'Submission for the OUAB DJ Competition',
+                  sc: false
+                }
               ];
             } 
           }

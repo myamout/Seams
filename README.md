@@ -1,8 +1,13 @@
 # SEAMS
 
+## About
+Simple website created for my friend, who is an up and coming DJ. As of now the website features links to his mixes on SoundCloud, MixCloud, and a means to contact him.
 
-## Current Task List For Site
+## Technologies Used
+I wanted to keep the site simple and easy to deploy. Something this simple that doesn't require a database doesn't necessarily call for an in-depth backend. Therefore I choose to use Google's framework, Polymer 2.0. Having worked with Polymer 1.0 I wanted to experiment and see what Google rewrote. Using the Polymer CLI I was able to test and build the website with a few commands. Full credit to the Google team as some of the site is modeled after their helpful examples
 
-+ Try and get some routing to work...
-+ Looks like the images is broken, might have to use polymer to build and bundle and then use Express to serve in prod
-+ Little bit more styling and evening out the rough edges
+**List Of Technologies Used**
++ Polymer 2.0
++ HTML5/CSS3
++ ES6
++ Polymer CLI

@@ -1,20 +1,47 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../shared-styles/shared-styles.html">
 
 <dom-module id="songs-element">
   <template>
     <style include="shared-styles">
-      iframe {
+      paper-card {
         padding: 2.5%;
       }
+      .row-element {
+        padding: 5%;
+      }a
     </style>
 
-    <div class="row">
-      <div>
-        <template is="dom-repeat" items="{{test}}">
-          <iframe width="100%" height="300" scrolling="yes" frameborder="no" src="[[item]]"></iframe>
-        </template>
-      </div>
+    <div>
+      <template is="dom-repeat" items="{{mixes}}">
+        <div class="row">
+          <div class="row-element">
+            <template is="dom-if" if="{{item.sc}}">
+              <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> [[item.mixTitle]] </h2>
+                  <iframe width="100%" height="300" scrolling="yes" frameborder="no" src="[[item.scLink]]"></iframe>
+                  <p>
+                    [[item.blurb]]
+                  </p>
+                </div>
+              </paper-card>
+            </template>
+            <template is="dom-if" if="{{!item.sc}}">
+              <paper-card elevation=4>
+                <div class="card-content">
+                  <h2> [[item.mixTitle]] </h2>
+                <iframe width="100%" height="120" src="[[item.scLink]]" frameborder="0"></iframe>
+                <p>
+                  [[item.blurb]]
+                </p>
+                </div>
+              </paper-card>
+            </template>
+          </div>
+        </div>
+      </template>
     </div>
 
   </template>
@@ -24,7 +51,7 @@
       static get is() {return 'songs-element';}
       static get properties() {
         return {
-          test: {
+          mixes: {
             type: Array
           }
         }
