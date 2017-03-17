@@ -67,6 +67,9 @@
       .container p {
         line-height: 1.5;
       }
+      .container-element {
+        padding: 2.5%;
+      }
       header {
         @apply(--layout-vertical);
         @apply(--layout-center-center);
@@ -106,7 +109,7 @@
 
       <section id="songs">
         <div class="container">
-          <songs-element test="{{tester}}"></songs-element>
+          <songs-element mixes="{{mixesInfo}}"></songs-element>
         </div>
       </section>
 
@@ -121,13 +124,25 @@
       
       static get properties() {
         return {
-          tester: {
+          mixesInfo: {
             type: Array,
             value () {
               return [
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300172729&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=true&amp;visual=true",
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309895959&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
-                "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303106381&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+                {
+                  mixTitle: 'A Wintry Mix',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300172729&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=true&amp;visual=true",
+                  blurb: 'Mix for December 2016'
+                },
+                {
+                  mixTitle: 'February Vibes',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309895959&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+                  blurb: 'Mix for February 2017'
+                },
+                {
+                  mixTitle: 'January Mix',
+                  scLink: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303106381&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+                  blurb: 'Mix for January 2017'
+                }
               ];
             } 
           }
