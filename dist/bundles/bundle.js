@@ -12896,7 +12896,12 @@ var Title = function (_React$Component) {
   function Title() {
     _classCallCheck(this, Title);
 
-    return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).call(this));
+
+    _this.state = {
+      title: "SEAMS"
+    };
+    return _this;
   }
 
   _createClass(Title, [{
@@ -12910,15 +12915,13 @@ var Title = function (_React$Component) {
           { className: "row" },
           _react2.default.createElement(
             "div",
-            { className: "center" },
+            { className: "col-12" },
             _react2.default.createElement(
-              "div",
-              { className: "col-12" },
-              _react2.default.createElement(
-                "h1",
-                null,
-                " SEAMS "
-              )
+              "h1",
+              { className: "center" },
+              " ",
+              this.state.title,
+              " "
             )
           )
         )
